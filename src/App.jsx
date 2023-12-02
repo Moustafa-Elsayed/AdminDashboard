@@ -1,10 +1,10 @@
-import Appbar from "./componenets/appbar/Appbar";
+import NavBar from "./componenets/appbar/NavBar";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <Appbar />
+      <NavBar />
     </>
   );
 }
