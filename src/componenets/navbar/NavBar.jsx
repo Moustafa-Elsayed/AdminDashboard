@@ -97,10 +97,7 @@ const NavBar = ({ handleDrawerOpen, open, setMode }) => {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" noWrap component="div">
-          Admin dashborad
-        </Typography>
-        <Stack />1
+        <Stack />
         <Search>
           <SearchIconWrapper>
             <SearchIcon />

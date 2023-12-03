@@ -99,14 +99,14 @@ const SideBar = ({ handleDrawerClose, open }) => {
       <Typography
         align="center"
         color="inherit"
-        sx={{ fontSize: open ? "17px" : 0, transition: ".5s" }}
+        sx={{  fontSize: open ? "17px" : 0, transition: ".5s" }}
       >
         Mostafa elsayed
       </Typography>
       <Typography
         align="center"
         color="inherit"
-        sx={{ fontSize: open ? "17px" : 0, transition: ".5s" }}
+        sx={{ my: 1, fontSize: open ? "17px" : 0, transition: ".5s" }}
       >
         Admin
       </Typography>
