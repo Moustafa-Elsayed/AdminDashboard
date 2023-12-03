@@ -76,7 +76,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 // eslint-disable-next-line react/prop-types
-const NavBar = ({ handleDrawerOpen, open }) => {
+const NavBar = ({ handleDrawerOpen, open, setMode }) => {
   const theme = useTheme();
   return (
     <AppBar
@@ -116,7 +116,11 @@ const NavBar = ({ handleDrawerOpen, open }) => {
             size="small"
             color="inherit"
             onClick={() => {
-
+              localStorage.setItem(
+                "currentMode",
+                theme.palette.mode === "dark" ? "light" : "dark"
+              );
+              setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
             }}
           >
             <LightModeIcon />
@@ -126,6 +130,11 @@ const NavBar = ({ handleDrawerOpen, open }) => {
             size="small"
             color="inherit"
             onClick={() => {
+              localStorage.setItem(
+                "currentMode",
+                theme.palette.mode === "dark" ? "light" : "dark"
+              );
+              setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
             }}
           >
             <DarkModeOutlinedIcon />

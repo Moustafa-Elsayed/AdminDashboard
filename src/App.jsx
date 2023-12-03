@@ -39,7 +39,11 @@ function App() {
       <ThemeProvider theme={theme}>
         <Box sx={{ display: "flex" }}>
           <CssBaseline />
-          <NavBar handleDrawerOpen={handleDrawerOpen} open={open} />
+          <NavBar
+            handleDrawerOpen={handleDrawerOpen}
+            open={open}
+            setMode={setMode}
+          />
           <SideBar handleDrawerClose={handleDrawerClose} open={open} />
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <DrawerHeader />
