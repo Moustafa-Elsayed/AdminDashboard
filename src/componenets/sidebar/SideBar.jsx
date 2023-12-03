@@ -12,6 +12,7 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { styled, useTheme } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
+import { Avatar, Typography } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -45,31 +46,28 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar,
 }));
 
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+const Drawer = styled(MuiDrawer, {
+  shouldForwardProp: (prop) => prop !== "open",
+})(
   // @ts-ignore
   ({ theme, open }) => ({
     width: drawerWidth,
     flexShrink: 0,
-    whiteSpace: 'nowrap',
-    boxSizing: 'border-box',
+    whiteSpace: "nowrap",
+    boxSizing: "border-box",
     ...(open && {
       ...openedMixin(theme),
-      '& .MuiDrawer-paper': openedMixin(theme),
+      "& .MuiDrawer-paper": openedMixin(theme),
     }),
     ...(!open && {
       ...closedMixin(theme),
-      '& .MuiDrawer-paper': closedMixin(theme),
+      "& .MuiDrawer-paper": closedMixin(theme),
     }),
-  }),
+  })
 );
 
-
-
-
-
-
 const SideBar = ({ handleDrawerClose, open }) => {
-    const theme = useTheme();
+  const theme = useTheme();
 
   return (
     <Drawer variant="permanent" open={open}>
@@ -85,6 +83,34 @@ const SideBar = ({ handleDrawerClose, open }) => {
           }
         </IconButton>
       </DrawerHeader>
+      <Divider />
+      <Avatar
+        sx={{
+          mx: "auto",
+          my: 1,
+          width: open ? 88 : 44,
+          height: open ? 88 : 44,
+          border: "2px solid gray",
+          transition: ".5s",
+        }}
+        alt="Remy Sharp"
+        src="./images/1000_F_529413165_SBJn56ZPxJprKno6OgA4KCiOL2l7QMAh.jpg"
+      />
+      <Typography
+        align="center"
+        color="initial"
+        sx={{ fontSize: open ? "17px" : 0, transition: ".05s" }}
+      >
+        Mostafa elsayed
+      </Typography>
+      <Typography
+        align="center"
+        color="initial"
+        sx={{ fontSize: open ? "17px" : 0, transition: ".5s" }}
+      >
+        Admin
+      </Typography>
+
       <Divider />
       <List>
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
@@ -110,6 +136,7 @@ const SideBar = ({ handleDrawerClose, open }) => {
           </ListItem>
         ))}
       </List>
+
       <Divider />
       <List>
         {["All mail", "Trash", "Spam"].map((text, index) => (
@@ -135,6 +162,7 @@ const SideBar = ({ handleDrawerClose, open }) => {
           </ListItem>
         ))}
       </List>
+
       <Divider />
       <List>
         {["All mail", "Trash", "Spam"].map((text, index) => (
