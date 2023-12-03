@@ -1,17 +1,27 @@
 import Toolbar from "@mui/material/Toolbar";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Box, IconButton, InputBase, Stack, Typography, alpha, styled } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  InputBase,
+  Stack,
+  Typography,
+  alpha,
+  styled,
+  useTheme,
+} from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
 import SearchIcon from "@mui/icons-material/Search";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
-// @ts-ignore
+  // @ts-ignore
 })(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(["width", "margin"], {
@@ -53,69 +63,85 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   justifyContent: "center",
 }));
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
+  color: "inherit",
+  "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "20ch",
     },
   },
 }));
- // eslint-disable-next-line react/prop-types
- const NavBar = ({ handleDrawerOpen, open }) => {
+// eslint-disable-next-line react/prop-types
+const NavBar = ({ handleDrawerOpen, open }) => {
+  const theme = useTheme();
+  return (
+    <AppBar
+      position="fixed"
+      // @ts-ignore
+      open={open}
+    >
+      <Toolbar>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          onClick={handleDrawerOpen}
+          edge="start"
+          sx={{
+            marginRight: 5,
+            ...(open && { display: "none" }),
+          }}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h6" noWrap component="div">
+          Admin dashborad
+        </Typography>
+        <Stack />1
+        <Search>
+          <SearchIconWrapper>
+            <SearchIcon />
+          </SearchIconWrapper>
+          <StyledInputBase
+            placeholder="Search…"
+            inputProps={{ "aria-label": "search" }}
+          />
+        </Search>
+        <Box flexGrow={1}></Box>
+        {theme.palette.mode === "light" ? (
+          <IconButton
+            size="small"
+            color="inherit"
+            onClick={() => {
 
-   return (
-     <AppBar
-       position="fixed"
-       // @ts-ignore
-       open={open}
-     >
-       <Toolbar>
-         <IconButton
-           color="inherit"
-           aria-label="open drawer"
-           onClick={handleDrawerOpen}
-           edge="start"
-           sx={{
-             marginRight: 5,
-             ...(open && { display: "none" }),
-           }}
-         >
-           <MenuIcon />
-         </IconButton>
-         <Typography variant="h6" noWrap component="div">
-           Admin dashborad
-         </Typography>
-         <Stack />1
-         <Search>
-           <SearchIconWrapper>
-             <SearchIcon />
-           </SearchIconWrapper>
-           <StyledInputBase
-             placeholder="Search…"
-             inputProps={{ "aria-label": "search" }}
-           />
-         </Search>
-         <Box flexGrow={1}></Box>
-         <IconButton size="small" color="inherit">
-           <DarkModeOutlinedIcon />
-           <LightModeIcon />
-         </IconButton>
-         <IconButton size="small" color="inherit">
-           <NotificationsNoneOutlinedIcon />
-         </IconButton>
-         <IconButton size="small" color="inherit">
-           <SettingsOutlinedIcon />
-         </IconButton>
-         <IconButton size="small" color="inherit">
-           <Person2OutlinedIcon />
-         </IconButton>
-       </Toolbar>
-     </AppBar>
-   );
- };
+            }}
+          >
+            <LightModeIcon />
+          </IconButton>
+        ) : (
+          <IconButton
+            size="small"
+            color="inherit"
+            onClick={() => {
+            }}
+          >
+            <DarkModeOutlinedIcon />
+          </IconButton>
+        )}
+        <IconButton size="small" color="inherit">
+          <NotificationsNoneOutlinedIcon />
+        </IconButton>
+        <IconButton size="small" color="inherit">
+          <SettingsOutlinedIcon />
+        </IconButton>
+        <IconButton size="small" color="inherit">
+          <Person2OutlinedIcon />
+        </IconButton>
+      </Toolbar>
+    </AppBar>
+  );
+};
 export default NavBar;
