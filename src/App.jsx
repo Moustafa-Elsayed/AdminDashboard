@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import NavBar from "./componenets/navbar/NavBar";
 import SideBar from "./componenets/sidebar/SideBar";
 import { useState } from "react";
+// @ts-ignore
 import { getDesignTokens } from "./theme";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
@@ -30,7 +31,11 @@ function App() {
     setOpen(false);
   };
   // @ts-ignore
-  const [mode, setMode] = React.useState("light");
+  const [mode, setMode] = React.useState(
+    localStorage.getItem("currentMode")
+      ? localStorage.getItem("currentMode")
+      : "light"
+  );
 
   const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
 
