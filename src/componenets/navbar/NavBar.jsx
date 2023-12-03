@@ -27,7 +27,9 @@ const AppBar = styled(MuiAppBar, {
  const NavBar = ({ handleDrawerOpen, open }) => {
 
    return (
-     <AppBar position="fixed" open={open}>
+     <AppBar position="fixed" 
+// @ts-ignore
+     open={open}>
        <Toolbar>
          <IconButton
            color="inherit"
@@ -42,7 +44,7 @@ const AppBar = styled(MuiAppBar, {
            <MenuIcon />
          </IconButton>
          <Typography variant="h6" noWrap component="div">
-           Mini variant drawer
+           Admin dashborad
          </Typography>
        </Toolbar>
      </AppBar>

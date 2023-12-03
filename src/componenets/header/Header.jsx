@@ -16,7 +16,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar,
 }));
 export default function Header() {
-  // @ts-ignore
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
