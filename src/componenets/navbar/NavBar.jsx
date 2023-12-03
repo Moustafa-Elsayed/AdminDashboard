@@ -1,10 +1,12 @@
 import Toolbar from "@mui/material/Toolbar";
 import MenuIcon from "@mui/icons-material/Menu";
-import { IconButton, InputBase, Stack, Typography, alpha, styled } from "@mui/material";
+import { Box, IconButton, InputBase, Stack, Typography, alpha, styled } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
 import SearchIcon from "@mui/icons-material/Search";
-import DeleteIcon from "@mui/icons-material/Delete";
-
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -88,6 +90,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
          <Typography variant="h6" noWrap component="div">
            Admin dashborad
          </Typography>
+         <Stack />1
          <Search>
            <SearchIconWrapper>
              <SearchIcon />
@@ -97,18 +100,19 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
              inputProps={{ "aria-label": "search" }}
            />
          </Search>
-         <Stack flexGrow={1} />
+         <Box flexGrow={1}></Box>
          <IconButton size="small" color="inherit">
-           <DeleteIcon />
+           <DarkModeOutlinedIcon />
+           <LightModeIcon />
          </IconButton>
          <IconButton size="small" color="inherit">
-           <DeleteIcon />
+           <NotificationsNoneOutlinedIcon />
          </IconButton>
          <IconButton size="small" color="inherit">
-           <DeleteIcon />
+           <SettingsOutlinedIcon />
          </IconButton>
          <IconButton size="small" color="inherit">
-           <DeleteIcon />
+           <Person2OutlinedIcon />
          </IconButton>
        </Toolbar>
      </AppBar>
