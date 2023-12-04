@@ -3,16 +3,17 @@ import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/material";
 import { Box } from "@mui/material";
 import { rows } from "../contacts/data";
-
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import SecurityIcon from "@mui/icons-material/Security";
+import LockOpenIcon from "@mui/icons-material/LockOpen";
 const Team = () => {
   const theme = useTheme();
-
 
   const columns = [
     {
       field: "id",
       headerName: "ID",
-      flex: 1,
+      width: 33,
       headerAlign: "center",
       align: "center",
     },
@@ -52,13 +53,39 @@ const Team = () => {
       align: "center",
       renderCell: ({ row: { access } }) => {
         return (
-          <Box sx={{
-            p:"5px", 
-            width:"99px",
-            textAlign:"center",
-            borderRadius:"3px",
-             backgroundColor:theme.palette.primary.dark}}>
-            <Typography color="initial">{access}</Typography>
+          <Box
+            sx={{
+              p: "6px",
+              width: "90px",
+              textAlign: "center",
+              borderRadius: "5px",
+              display: "flex",
+              justifyContent: "space-evenly",
+              alignItems: "center",
+              backgroundColor:
+                access === "admin"
+                  ? theme.palette.primary.dark
+                  : access === "manager"
+                  ? theme.palette.secondary.dark
+                  : theme.palette.error.dark,
+            }}
+          >
+            {access === "admin" && (
+              <AdminPanelSettingsIcon
+                sx={{ color: "white" }}
+                fontSize="small"
+              />
+            )}
+            {access === "manager" && (
+              <SecurityIcon sx={{ color: "white" }} fontSize="small" />
+            )}
+            {access === "user" && (
+              <LockOpenIcon sx={{ color: "white" }} fontSize="small" />
+            )}
+
+            <Typography sx={{ fontSize: "13px", color: "white" }}>
+              {access}
+            </Typography>
           </Box>
         );
       },
@@ -73,13 +100,13 @@ const Team = () => {
         Manging the Team members
       </Typography>
 
-      <div style={{ height: 300, width: "100%" }}>
+      <Box sx={{ height: 600, width: "100%" }}>
         <DataGrid
           rows={rows}
           // @ts-ignore
           columns={columns}
         />
-      </div>
+      </Box>
     </>
   );
 };
