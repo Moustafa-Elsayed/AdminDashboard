@@ -22,7 +22,9 @@ import BarChartIcon from "@mui/icons-material/BarChart";
 import TimelineIcon from "@mui/icons-material/Timeline";
 import DonutLargeIcon from "@mui/icons-material/DonutLarge";
 import PublicIcon from "@mui/icons-material/Public";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { grey } from "@mui/material/colors";
+
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -76,7 +78,8 @@ const Drawer = styled(MuiDrawer, {
 );
 
 const SideBar = ({ handleDrawerClose, open }) => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation();
   const theme = useTheme();
   const arrayOne = [
     {
@@ -190,6 +193,12 @@ const SideBar = ({ handleDrawerClose, open }) => {
                 minHeight: 48,
                 justifyContent: open ? "initial" : "center",
                 px: 2.5,
+                bgcolor:
+                  location.pathname === items.path
+                    ? theme.palette.mode === "dark"
+                      ? grey[800]
+                      : grey[400]
+                    : null,
               }}
               onClick={() => {
                 navigate(items.path);
@@ -222,6 +231,7 @@ const SideBar = ({ handleDrawerClose, open }) => {
                 minHeight: 48,
                 justifyContent: open ? "initial" : "center",
                 px: 2.5,
+                bgcolor: location.pathname === items.path ? "gray" : null,
               }}
               onClick={() => {
                 navigate(items.path);
@@ -254,6 +264,7 @@ const SideBar = ({ handleDrawerClose, open }) => {
                 minHeight: 48,
                 justifyContent: open ? "initial" : "center",
                 px: 2.5,
+                bgcolor: location.pathname === items.path ? "gray" : null,
               }}
               onClick={() => {
                 navigate(items.path);
