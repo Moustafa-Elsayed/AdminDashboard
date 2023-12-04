@@ -22,6 +22,7 @@ import BarChartIcon from "@mui/icons-material/BarChart";
 import TimelineIcon from "@mui/icons-material/Timeline";
 import DonutLargeIcon from "@mui/icons-material/DonutLarge";
 import PublicIcon from "@mui/icons-material/Public";
+import { useNavigate } from "react-router-dom";
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -75,6 +76,7 @@ const Drawer = styled(MuiDrawer, {
 );
 
 const SideBar = ({ handleDrawerClose, open }) => {
+  const navigate=useNavigate();
   const theme = useTheme();
   const arrayOne = [
     {
@@ -85,56 +87,56 @@ const SideBar = ({ handleDrawerClose, open }) => {
     {
       Text: "Manange Team",
       icon: <PeopleIcon />,
-      path: "/",
+      path: "/team",
     },
     {
       Text: "Contacts Information",
       icon: <ContactsIcon />,
-      path: "/",
+      path: "/contacts",
     },
     {
       Text: "Invioces Balance",
       icon: <InsertDriveFileIcon />,
-      path: "/",
+      path: "/invioces",
     },
   ];
   const arrayTwo = [
     {
       Text: "Profile Form",
       icon: <Person3Icon />,
-      path: "/",
+      path: "/profile",
     },
     {
       Text: "Calender",
       icon: <CalendarMonthIcon />,
-      path: "/",
+      path: "/calender",
     },
     {
       Text: "FAQ Page",
       icon: <LiveHelpIcon />,
-      path: "/",
+      path: "/faq",
     },
   ];
   const arrayThere = [
     {
       Text: "Bar Chart",
       icon: <BarChartIcon />,
-      path: "/",
+      path: "/barchart",
     },
     {
       Text: "Pie Chart",
       icon: <DonutLargeIcon />,
-      path: "/",
+      path: "/piechart",
     },
     {
       Text: "LIne Chart",
       icon: <TimelineIcon />,
-      path: "/",
+      path: "/linechart",
     },
     {
       Text: "Geography",
       icon: <PublicIcon />,
-      path: "/",
+      path: "/geography",
     },
   ];
   return (
@@ -189,6 +191,9 @@ const SideBar = ({ handleDrawerClose, open }) => {
                 justifyContent: open ? "initial" : "center",
                 px: 2.5,
               }}
+              onClick={() => {
+                navigate(items.path);
+              }}
             >
               <ListItemIcon
                 sx={{
@@ -217,6 +222,9 @@ const SideBar = ({ handleDrawerClose, open }) => {
                 minHeight: 48,
                 justifyContent: open ? "initial" : "center",
                 px: 2.5,
+              }}
+              onClick={() => {
+                navigate(items.path);
               }}
             >
               <ListItemIcon
@@ -247,6 +255,9 @@ const SideBar = ({ handleDrawerClose, open }) => {
                 justifyContent: open ? "initial" : "center",
                 px: 2.5,
               }}
+              onClick={() => {
+                navigate(items.path);
+              }}
             >
               <ListItemIcon
                 sx={{
@@ -257,7 +268,10 @@ const SideBar = ({ handleDrawerClose, open }) => {
               >
                 {items.icon}
               </ListItemIcon>
-              <ListItemText primary={items.Text} sx={{ opacity: open ? 1 : 0 }} />
+              <ListItemText
+                primary={items.Text}
+                sx={{ opacity: open ? 1 : 0 }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
