@@ -178,7 +178,7 @@ const SideBar = ({ handleDrawerClose, open }) => {
       </Typography>
       <Typography
         align="center"
-        color="inherit"
+        color="primary"
         sx={{ my: 1, fontSize: open ? "17px" : 0, transition: ".5s" }}
       >
         Admin

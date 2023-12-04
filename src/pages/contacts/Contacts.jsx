@@ -1,9 +1,7 @@
-import React from 'react'
 
-const Calender = () => {
+const Contacts = () => {
   return (
-    <div>Contacts</div>
   )
 }
 
-export default Calender
+export default Contacts
