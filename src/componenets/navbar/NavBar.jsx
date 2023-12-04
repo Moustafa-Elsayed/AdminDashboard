@@ -5,7 +5,6 @@ import {
   IconButton,
   InputBase,
   Stack,
-  Typography,
   alpha,
   styled,
   useTheme,

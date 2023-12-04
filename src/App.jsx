@@ -11,6 +11,7 @@ import SideBar from "./componenets/sidebar/SideBar";
 import { useState } from "react";
 // @ts-ignore
 import { getDesignTokens } from "./theme";
+import { Outlet } from "react-router-dom";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -52,7 +53,7 @@ function App() {
           <SideBar handleDrawerClose={handleDrawerClose} open={open} />
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <DrawerHeader />
-            <Typography paragraph>mostafa elaraby</Typography>
+            <Outlet />
           </Box>
         </Box>
       </ThemeProvider>
