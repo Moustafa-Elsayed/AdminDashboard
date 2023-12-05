@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import Team from "./pages/team/Team.jsx";
-import Contacts from "@mui/icons-material/Contacts.js";
+
 import Invioces from "./pages/invioces/Invioces.jsx";
 import Geography from "./pages/geography/Geography.jsx";
 import Linechart from "./pages/lineChart/Linechart.jsx";
@@ -19,13 +19,14 @@ import Barchart from "./pages/barChart/Barchart.jsx";
 import Faq from "./pages/faq/Faq.jsx";
 import Calender from "./pages/calender/Calender.jsx";
 import Form from "./pages/form/Form.jsx";
+import Contact from "./pages/contacts/Contact.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<Dashboard />} />
       <Route path="team" element={<Team />} />
-      <Route path="contacts" element={<Contacts />} />
+      <Route path="contacts" element={<Contact />} />
       <Route path="invioces" element={<Invioces />} />
       <Route path="profile" element={<Form />} />
       <Route path="calender" element={<Calender />} />

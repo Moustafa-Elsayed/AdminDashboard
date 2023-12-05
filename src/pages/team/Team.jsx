@@ -2,10 +2,10 @@ import { DataGrid } from "@mui/x-data-grid";
 import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/material";
 import { Box } from "@mui/material";
-import { rows } from "../contacts/data";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import SecurityIcon from "@mui/icons-material/Security";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
+import { rows } from "./data";
 const Team = () => {
   const theme = useTheme();
 
@@ -93,10 +93,13 @@ const Team = () => {
   ];
   return (
     <>
-      <Typography color="primary" sx={{ mb: 1, fontSize: "24px" }}>
+      <Typography
+        color="primary"
+        sx={{ mb: 1, fontSize: "24px", textTransform: "capitalize" }}
+      >
         Team
       </Typography>
-      <Typography sx={{ mb: 3, fontSize: "24px" }}>
+      <Typography sx={{ mb: 3, fontSize: "24px", textTransform: "capitalize" }}>
         Manging the Team members
       </Typography>
 
