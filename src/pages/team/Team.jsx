@@ -95,7 +95,7 @@ const Team = () => {
     <>
       <Typography
         color="primary"
-        sx={{ mb: 1, fontSize: "24px", textTransform: "capitalize" }}
+        sx={{ mb: 1, fontSize: "24px", textTransform: "uppercase" }}
       >
         Team
       </Typography>
