@@ -1,9 +1,10 @@
+/* eslint-disable no-unused-vars */
 import { formatDate } from "@fullcalendar/core";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./calender.css";
 import { Paper } from "@mui/material";
 function renderEventContent(eventInfo) {
@@ -31,16 +32,37 @@ function renderSidebarEvent(event) {
 }
 
 const Calender = () => {
-  const [weekendsVisible, setWeekendsVisible] = useState(true);
-  const [currentEvents, setCurrentEvents] = useState([]);
+   const [events, setEvents] = useState([]);
+   const [weekendsVisible, setWeekendsVisible] = useState(true);
+   const [currentEvents, setCurrentEvents] = useState([]);
+
+   useEffect(() => {
+     try {
+       const storedEvents =
+         JSON.parse(localStorage.getItem("calendarEvents")) || [];
+       setEvents(storedEvents);
+     } catch (error) {
+       console.error("Error loading events from local storage:", error);
+     }
+   }, []);
+
+   useEffect(() => {
+     try {
+       localStorage.setItem("calendarEvents", JSON.stringify(events));
+     } catch (error) {
+       console.error("Error saving events to local storage:", error);
+     }
+   }, [events]);
+
+
 
   let eventGuid = 0;
   function createEventId() {
     return String(eventGuid++);
   }
-  const handleWeekendsToggle = () => {
-    setWeekendsVisible(!weekendsVisible);
-  };
+  // const handleWeekendsToggle = () => {
+  //   setWeekendsVisible(!weekendsVisible);
+  // };
 
   const handleDateSelect = (selectInfo) => {
     let title = prompt("Please enter a new title for your event");
@@ -77,7 +99,7 @@ const Calender = () => {
     <>
       <div className="demo-app">
         <Paper className="demo-app-sidebar">
-          <div className="demo-app-sidebar-section">
+          {/* <div className="demo-app-sidebar-section">
             <label>
               <input
                 type="checkbox"
@@ -86,7 +108,7 @@ const Calender = () => {
               ></input>
               toggle weekends
             </label>
-          </div>
+          </div> */}
           <div className="demo-app-sidebar-section">
             <h2>All Events ({currentEvents.length})</h2>
             <ul>{currentEvents.map(renderSidebarEvent)}</ul>
