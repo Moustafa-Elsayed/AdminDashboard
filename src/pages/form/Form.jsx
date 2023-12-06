@@ -59,7 +59,8 @@ const Form = () => {
               label="Last Name"
               variant="filled"
               sx={{ flex: "1" }}
-              
+              {...register("lastName", { required: true, minLength: 5 })}
+              required
             />
           </Stack>
 
@@ -76,19 +77,22 @@ const Form = () => {
             id="filled-basic"
             label="Contact Number"
             variant="filled"
-           
+            {...register("conatctNumber", { required: true, minLength: 11 })}
+            required
           />
           <TextField
             id="filled-basic"
             label="Address 1"
             variant="filled"
+            {...register("addressOne", { required: false, minLength: 7 })}
             
           />
           <TextField
             id="filled-basic"
             label="Adress 2"
             variant="filled"
-           
+            {...register("addressTwo", { required: false, minLength: 7 })}
+
           />
           <TextField
             id="outlined-select-currency"
@@ -96,7 +100,7 @@ const Form = () => {
             select
             label="Role"
             defaultValue="User"
-            
+            required
           >
             {currencies.map((option) => (
               <MenuItem key={option.value} value={option.value}>
