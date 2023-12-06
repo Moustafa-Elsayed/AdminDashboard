@@ -5,6 +5,7 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { useState } from "react";
 import "./calender.css";
+import { Paper } from "@mui/material";
 function renderEventContent(eventInfo) {
   return (
     <>
@@ -75,9 +76,8 @@ const Calender = () => {
   return (
     <>
       <div className="demo-app">
-        <div className="demo-app-sidebar">
-         
-          {/* <div className="demo-app-sidebar-section">
+        <Paper className="demo-app-sidebar">
+          <div className="demo-app-sidebar-section">
             <label>
               <input
                 type="checkbox"
@@ -86,12 +86,12 @@ const Calender = () => {
               ></input>
               toggle weekends
             </label>
-          </div> */}
+          </div>
           <div className="demo-app-sidebar-section">
             <h2>All Events ({currentEvents.length})</h2>
             <ul>{currentEvents.map(renderSidebarEvent)}</ul>
           </div>
-        </div>
+        </Paper>
         <div className="demo-app-main">
           <FullCalendar
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
