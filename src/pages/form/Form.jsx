@@ -51,7 +51,11 @@ const Form = () => {
               label="First Name"
               variant="filled"
               sx={{ flex: "1" }}
-              {...register("firstName", { required: true, minLength: 5 })}
+              {...register("firstName", {
+                required: true,
+                minLength: 5,
+                pattern: /^\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+$/i,
+              })}
               required
             />
             <TextField
@@ -59,7 +63,11 @@ const Form = () => {
               label="Last Name"
               variant="filled"
               sx={{ flex: "1" }}
-              {...register("lastName", { required: true, minLength: 5 })}
+              {...register("lastName", {
+                required: true,
+                minLength: 5,
+                pattern: /^\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+$/i,
+              })}
               required
             />
           </Stack>
@@ -77,7 +85,12 @@ const Form = () => {
             id="filled-basic"
             label="Contact Number"
             variant="filled"
-            {...register("conatctNumber", { required: true, minLength: 11 })}
+            {...register("conatctNumber", {
+              required: true,
+              minLength: 11,
+              pattern:
+                /^[\\+]?[(]?[0-9]{3}[)]?[-\s\\.]?[0-9]{3}[-\s\\.]?[0-9]{4,6}$/i,
+            })}
             required
           />
           <TextField
@@ -85,14 +98,12 @@ const Form = () => {
             label="Address 1"
             variant="filled"
             {...register("addressOne", { required: false, minLength: 7 })}
-            
           />
           <TextField
             id="filled-basic"
             label="Adress 2"
             variant="filled"
             {...register("addressTwo", { required: false, minLength: 7 })}
-
           />
           <TextField
             id="outlined-select-currency"
