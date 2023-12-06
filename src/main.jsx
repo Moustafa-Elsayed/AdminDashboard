@@ -10,7 +10,6 @@ import {
 } from "react-router-dom";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import Team from "./pages/team/Team.jsx";
-
 import Invioces from "./pages/invioces/Invioces.jsx";
 import Geography from "./pages/geography/Geography.jsx";
 import Linechart from "./pages/lineChart/Linechart.jsx";
