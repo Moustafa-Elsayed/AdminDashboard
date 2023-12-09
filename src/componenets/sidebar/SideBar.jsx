@@ -123,7 +123,7 @@ const SideBar = ({ handleDrawerClose, open }) => {
   const arrayThere = [
     {
       Text: "Bar Chart",
-      icon: <BarChartIcon />,
+      icon: <TimelineIcon />,
       path: "/barchart",
     },
     {
@@ -133,7 +133,7 @@ const SideBar = ({ handleDrawerClose, open }) => {
     },
     {
       Text: "Line Chart",
-      icon: <TimelineIcon />,
+      icon: <BarChartIcon />,
       path: "/linechart",
     },
     {
