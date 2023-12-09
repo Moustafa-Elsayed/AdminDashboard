@@ -132,7 +132,7 @@ const SideBar = ({ handleDrawerClose, open }) => {
       path: "/piechart",
     },
     {
-      Text: "LIne Chart",
+      Text: "Line Chart",
       icon: <TimelineIcon />,
       path: "/linechart",
     },
