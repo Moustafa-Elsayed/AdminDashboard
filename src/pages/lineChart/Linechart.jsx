@@ -15,10 +15,10 @@ const Linechart = () => {
     <Box sx={{ height: "75vh", width: "auto" }}>
       <ResponsiveBar
         theme={{
-          background: "#ffffff",
+          background: "none",
           text: {
             fontSize: 11,
-            fill: "#333333",
+            fill: theme.palette.primary.main,
             outlineWidth: 0,
             outlineColor: "transparent",
           },
@@ -32,7 +32,7 @@ const Linechart = () => {
             legend: {
               text: {
                 fontSize: 12,
-                fill: "#333333",
+                fill: theme.palette.,
                 outlineWidth: 0,
                 outlineColor: "transparent",
               },

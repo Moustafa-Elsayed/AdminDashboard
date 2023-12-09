@@ -43,33 +43,33 @@ const Piechart = () => {
           background: "transparent",
           text: {
             fontSize: 11,
-           fill:"black",
+            fill: theme.palette.text.primary,
             outlineWidth: 0,
             outlineColor: "transparent",
           },
           axis: {
             domain: {
               line: {
-                stroke: theme.palette.divider,
+                stroke: "red",
                 strokeWidth: 1,
               },
             },
             legend: {
               text: {
                 fontSize: 12,
-                fill:"black",
+                fill: theme.palette.text.primary,
                 outlineWidth: 0,
                 outlineColor: "transparent",
               },
             },
             ticks: {
               line: {
-                stroke: "yellow",
+                stroke: theme.palette.text.primary,
                 strokeWidth: 1,
               },
               text: {
                 fontSize: 11,
-                fill:"black",
+                fill: theme.palette.text.primary,
                 outlineWidth: 0,
                 outlineColor: "transparent",
               },
@@ -77,7 +77,7 @@ const Piechart = () => {
           },
           grid: {
             line: {
-              stroke: "#dddddd",
+              stroke: theme.palette.text.primary,
               strokeWidth: 1,
             },
           },
@@ -85,14 +85,14 @@ const Piechart = () => {
             title: {
               text: {
                 fontSize: 11,
-                fill:"black",
+                fill: theme.palette.text.primary,
                 outlineWidth: 0,
                 outlineColor: "transparent",
               },
             },
             text: {
               fontSize: 11,
-              fill:"black",
+              fill: theme.palette.text.primary,
               outlineWidth: 0,
               outlineColor: "transparent",
             },
@@ -100,7 +100,7 @@ const Piechart = () => {
               line: {},
               text: {
                 fontSize: 10,
-                fill:"black",
+                fill: theme.palette.text.primary,
                 outlineWidth: 0,
                 outlineColor: "transparent",
               },
@@ -109,27 +109,27 @@ const Piechart = () => {
           annotations: {
             text: {
               fontSize: 13,
-              fill:"black",
+              fill: theme.palette.text.primary,
               outlineWidth: 2,
-              outlineColor: "#ffffff",
+              outlineColor: theme.palette.text.primary,
               outlineOpacity: 1,
             },
             link: {
-              stroke: "#000000",
+              stroke: theme.palette.text.primary,
               strokeWidth: 1,
               outlineWidth: 2,
               outlineColor: "gray",
               outlineOpacity: 1,
             },
             outline: {
-              stroke: "#000000",
+              stroke: theme.palette.text.primary,
               strokeWidth: 2,
               outlineWidth: 2,
               outlineColor: "#ffffff",
               outlineOpacity: 1,
             },
             symbol: {
-              fill:"black", 
+              fill: theme.palette.text.primary,
               outlineWidth: 2,
               outlineColor: "#ffffff",
               outlineOpacity: 1,
@@ -137,7 +137,7 @@ const Piechart = () => {
           },
           tooltip: {
             container: {
-              background: "#ffffff",
+              background: theme.palette.background.paper,
               fontSize: 12,
             },
             basic: {},
@@ -159,7 +159,7 @@ const Piechart = () => {
           modifiers: [["darker", 0.2]],
         }}
         arcLinkLabelsSkipAngle={10}
-        arcLinkLabelsTextColor="#333333"
+        arcLinkLabelsTextColor={theme.palette.text.primary}
         arcLinkLabelsThickness={2}
         arcLinkLabelsColor={{ from: "color" }}
         arcLabelsSkipAngle={10}
@@ -247,7 +247,7 @@ const Piechart = () => {
             itemsSpacing: 0,
             itemWidth: 100,
             itemHeight: 18,
-            itemTextColor: "#999",
+            itemTextColor: theme.palette.text.primary,
             itemDirection: "left-to-right",
             itemOpacity: 1,
             symbolSize: 18,
@@ -256,7 +256,7 @@ const Piechart = () => {
               {
                 on: "hover",
                 style: {
-                  itemTextColor: "#000",
+                  itemTextColor: theme.palette.text.primary,
                 },
               },
             ],
