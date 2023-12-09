@@ -32,7 +32,7 @@ const Linechart = () => {
             legend: {
               text: {
                 fontSize: 12,
-                fill: theme.palette.,
+                fill: theme.palette.text.primary,
                 outlineWidth: 0,
                 outlineColor: "transparent",
               },
@@ -44,7 +44,7 @@ const Linechart = () => {
               },
               text: {
                 fontSize: 11,
-                fill: "#333333",
+                fill: theme.palette.text.secondary,
                 outlineWidth: 0,
                 outlineColor: "transparent",
               },
@@ -52,7 +52,7 @@ const Linechart = () => {
           },
           grid: {
             line: {
-              stroke: "#dddddd",
+              stroke: theme.palette.divider,
               strokeWidth: 1,
             },
           },
@@ -67,7 +67,7 @@ const Linechart = () => {
             },
             text: {
               fontSize: 11,
-              fill: "#333333",
+              fill: theme.palette.text.primary,
               outlineWidth: 0,
               outlineColor: "transparent",
             },
@@ -112,7 +112,7 @@ const Linechart = () => {
           },
           tooltip: {
             container: {
-              background: "#ffffff",
+              background:theme.palette.background.paper ,
               fontSize: 12,
             },
             basic: {},
