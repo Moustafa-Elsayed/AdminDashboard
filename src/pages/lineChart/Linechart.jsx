@@ -1,5 +1,4 @@
 import { Box, useTheme } from "@mui/material";
-// @ts-ignore
 import { ResponsiveBar } from "@nivo/bar";
 const data = [
   { year: 2019, Spain: 900, France: 1050, Germany: 1200 },
