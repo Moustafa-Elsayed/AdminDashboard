@@ -4,7 +4,7 @@
 
 <h2>🚀 Demo</h2>
 
-admin-dashboard-eight-indol.vercel.app
+https://admin-dashboard-eight-indol.vercel.app/
 <h2>Project Screenshots:</h2>
 
 <img src="https://i.ibb.co/c1Jqgcs/8.png" alt="shields" width="800" height="400&quot;/">
