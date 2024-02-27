@@ -1,10 +1,10 @@
 <h1 align="center">Portfolio WebSite</h1>
-<P>This is a Portfolio Responsive Webpage built with NextJs,Tailwind,Materila ui, Resend Email JS</P>
+<P>This is a AdminDashboard Responsive  built with ReactJs,Materila ui, React Router </P>
 <p align="center"><img src="https://i.ibb.co/yFVGyxb/6.png" alt="project"></p>
 
 <h2>🚀 Demo</h2>
 
-https://moustafa-elsayed-portoflio.vercel.app/
+admin-dashboard-eight-indol.vercel.app
 <h2>Project Screenshots:</h2>
 
 <img src="https://i.ibb.co/c1Jqgcs/8.png" alt="shields" width="800" height="400&quot;/">
@@ -15,7 +15,7 @@ https://moustafa-elsayed-portoflio.vercel.app/
 <p>1. Clone the repository</p>
 
 ```
-git clone https://github.com/Moustafa-Elsayed/personal-portfolio.git
+git clone https://github.com/Moustafa-Elsayed/AdminDashboard.git
 ```
 
 <p>2. Install npm modules</p>
