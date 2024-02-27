@@ -48,11 +48,9 @@ yarn start
 
 Technologies used in the project:
 
-*  [Next.js](https://nextjs.org/)
 *  [React Js](https://react.dev/learn) 
-*  [TailwindCSS](https://tailwindcss.com/)  
 *  [Materila ui](https://mui.com/material-ui/getting-started/) 
-*  [Resend Email ](https://resend.com/emails/69382737-8835-4c5a-a6ed-12f5b160910c)
+*  [React Router](https://reactrouter.com/en/main)
 
 
 
