@@ -1,7 +1,9 @@
+// @ts-nocheck
 import { Paper, Stack, Typography, useTheme } from "@mui/material";
-// import Pie from "../../page/pieChart/pie";
-// import Bar from "../../page/barChart/bar";
-// import Geo from "../../page/geography/geo";
+import Piechart from "../../pages/pieChart/Piechart";
+import Barchart from "../../pages/barChart/Barchart";
+import Geography from "../../pages/geography/Geography";
+
 
 const Row3 = () => {
   const theme = useTheme();
@@ -17,7 +19,7 @@ const Row3 = () => {
           Campaign
         </Typography>
 
-        {/* <Pie isDashbord={true} /> */}
+        <Piechart isDashbord={true} />
         <Typography variant="h6" align="center" sx={{ mt: "15px" }}>
           $48,352 revenue generated
         </Typography>
@@ -36,11 +38,11 @@ const Row3 = () => {
           Sales Quantity
         </Typography>
 
-        {/* <Bar isDashbord={true} /> */}
+        <Barchart isDashbord={true} />
       </Paper>
 
       <Paper sx={{ flexGrow: 1, minWidth: "400px", width: "33%" }}>
-        {/* <Geo isDashbord={true} /> */}
+        <Geography isDashbord={true} />
       </Paper>
     </Stack>
   );

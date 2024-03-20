@@ -1,13 +1,13 @@
-import Button from "@mui/material/Button";
-import { DownloadOutlined } from "@mui/icons-material";
-import { Box, Stack, useTheme } from "@mui/material";
 import Row1 from "./Row1";
 import Row2 from "./Row2";
 import Row3 from "./Row3";
-import NavBar from "../../componenets/navbar/NavBar";
+import Button from "@mui/material/Button";
+import { DownloadOutlined } from "@mui/icons-material";
+import { Box, Stack, useTheme } from "@mui/material";
+import Header from "../../componenets/Header";
 
 const Dashboard = () => {
-  // @ts-ignore
+  // eslint-disable-next-line no-unused-vars
   const theme = useTheme();
   return (
     <div>
@@ -16,8 +16,7 @@ const Dashboard = () => {
         justifyContent={"space-between"}
         alignItems={"center"}
       >
-        <NavBar
-          // @ts-ignore
+        <Header
           isDashboard={true}
           title={"DASHBOARD"}
           subTitle={"Welcome to your dashboard"}
