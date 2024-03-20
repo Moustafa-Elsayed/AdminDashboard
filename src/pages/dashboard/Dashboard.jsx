@@ -1,30 +1,23 @@
-import React from 'react'
 
-const Dashboard = () => {
-  return (
-    <div>Dashboard</div>
-  )
-}
-
-export default Dashboardimport React from "react";
+import Button from "@mui/material/Button";
+import { DownloadOutlined } from "@mui/icons-material";
+import { Box, Stack, useTheme } from "@mui/material";
 import Row1 from "./Row1";
 import Row2 from "./Row2";
 import Row3 from "./Row3";
-import Button from "@mui/material/Button";
-import { DownloadOutlined } from "@mui/icons-material";
-import { Box, Stack, Typography, useTheme } from "@mui/material";
-import Header from "../../components/Header";
 
 const Dashboard = () => {
+  // @ts-ignore
   const theme = useTheme();
   return (
     <div>
 <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"}>
-        <Header
+        {/* <NavBar
+          // @ts-ignore
           isDashboard={true}
           title={"DASHBOARD"}
           subTitle={"Welcome to your dashboard"}
-        />
+        /> */}
   
         <Box sx={{ textAlign: "right", mb: 1.3 }}>
           <Button
