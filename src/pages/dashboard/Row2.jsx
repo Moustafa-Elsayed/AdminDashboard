@@ -9,6 +9,7 @@ import {
 
   import { DownloadOutlined } from "@mui/icons-material";
   import { Transactions } from "./data";
+import Linechart from "../../pages/lineChart/Linechart";
   
   const Row2 = () => {
     const theme = useTheme();
@@ -44,7 +45,9 @@ import {
             </Box>
           </Stack>
   
-          {/* <Linechart  /> */}
+          <Linechart 
+// @ts-ignore
+          isDahboard={true} />
         </Paper>
   
         <Box
