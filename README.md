@@ -1,6 +1,6 @@
 <h1 align="center">AdminDashboard </h1>
 <P>This is a AdminDashboard Responsive  built with ReactJs,Materila ui, React Router </P>
-<p align="center"><img src="https://i.ibb.co/yFVGyxb/6.png" alt="project"></p>
+<p align="center"><img src="https://i.ibb.co/pv3KJtW/1.png" alt="project"></p>
 
 <h2>🚀 Demo</h2>
 
